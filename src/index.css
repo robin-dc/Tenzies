@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  *{
+    font-family: "Poppins", sans-serif;
+  }
+  .container{
+    @apply px-[1rem] lg:px-[3rem]
+  }
+  .frontpage{
+    background-image: url('/hero.png');
+    background-repeat: no-repeat;
+    background-position-x: 160%;
+    background-position-y: 5%;
+    background-size: contain;
+  }
+  body{
+    @apply bg-gray-950
+  }
+  p{
+    @apply text-white
+  }
+  .die{
+    @apply  p-[4px] lg:p-[3px] rounded-[1rem] lg:rounded-[1.7rem] cursor-pointer active:scale-[0.95] flex justify-center items-center
+  }
+  .die img{
+    @apply translate-x-[2.8px] translate-y-[2px] lg:translate-x-[0.33rem] lg:translate-y-1
+  }
+  .text-shadow{
+    text-shadow: 2px 20px 40px rgba(0, 0, 0, 0.3);
+  }
+}
