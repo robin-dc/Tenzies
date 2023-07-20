@@ -16,10 +16,17 @@ function FrontPage({name, setName}) {
         });
       }, []);
 
+    useEffect(() => {
+        if(isLoading){
+            localStorage.setItem("currentPlayer", JSON.stringify(name))
+        }
+    },[isLoading])
+
     function handleSubmit(e){
         e.preventDefault()
         setIsLoading(true)
         const loader = setTimeout(() => {
+            setIsLoading(false)
             navigate('/tenzies')
         }, 2500)
 

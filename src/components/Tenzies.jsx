@@ -4,13 +4,12 @@ import { AiFillThunderbolt } from 'react-icons/ai';
 import { FaTrophy } from 'react-icons/fa';
 import AOS from "aos"
 import "aos/dist/aos.css"
-import { useNavigate } from 'react-router-dom';
 
 function Tenzies({name, dices, setRollAgain, Held, checkWin, isWin, rollCount, setRollCount, seconds, setSeconds}) {
-    const navigate = useNavigate()
     const [isActive, setIsActive] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isHighScore, setIsHighScore] = useState(false);
+    const lastPlayer = JSON.parse(localStorage.getItem("currentPlayer"))
 
     useEffect(() => {
         AOS.init({
@@ -18,11 +17,7 @@ function Tenzies({name, dices, setRollAgain, Held, checkWin, isWin, rollCount, s
           easing: "ease-in-out",
           once: true,
         });
-
-        if(!name){
-            navigate('/')
-        }
-      }, [name, navigate]);
+      }, [name]);
 
     useEffect(() => {
       let interval = null;
@@ -107,7 +102,7 @@ function Tenzies({name, dices, setRollAgain, Held, checkWin, isWin, rollCount, s
             <nav className='py-[1.4rem] flex justify-between relative'>
                 <div className='flex gap-[0.5rem] items-center'>
                     <AiFillThunderbolt className='text-teal-600 text-[2rem] inline'/>
-                    <h3 className="text-gray-300 tracking-widest lg:text-[1.3rem]">Player {name && name[0].toUpperCase() + name.slice(1)}</h3>
+                    <h3 className="text-gray-300 tracking-widest lg:text-[1.3rem]">Player {lastPlayer ? lastPlayer : name[0].toUpperCase() + name.slice(1)}</h3>
                 </div>
                 <div className='flex gap-[0.5rem] items-center'>
                     <h3 className="text-gray-300 tracking-widest lg:text-[1.3rem]">Rolls: {rollCount}</h3>
