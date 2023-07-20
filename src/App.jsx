@@ -14,9 +14,10 @@ function App() {
   const [isWin, setIsWin] = useState(false)
   const [rollCount, setRollCount] = useState(0)
   const [seconds, setSeconds] = useState(0);
+  const [isLogout, setIsLogout] = useState(false);
 
   useEffect(() => {
-    if(isWin){
+    if(isWin || isLogout){
       setIsWin(false)
       setRollCount(0)
       setSeconds(0)
@@ -25,7 +26,7 @@ function App() {
       setRollAgain(false)
     }
     generateDice()
-  }, [rollAgain])
+  }, [rollAgain, isLogout])
 
   function generateDice(){
 
@@ -79,7 +80,7 @@ function App() {
       {isWin && <div className="fixed top-0 left-0 bottom-0 right-0 pointer-events-none"><Confetti/></div>}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<FrontPage name={name} setName={setName}/>}/>
+          <Route path="/" element={<FrontPage name={name} setName={setName} setIsLogout={setIsLogout}/>}/>
           <Route path="/tenzies" element={<Tenzies
             name={name}
             dices={newDices}
@@ -87,6 +88,7 @@ function App() {
             Held={Held}
             checkWin={checkWin}
             isWin={isWin}
+            setIsLogout={setIsLogout}
             rollCount={rollCount}
             setRollCount={setRollCount}
             seconds={seconds}

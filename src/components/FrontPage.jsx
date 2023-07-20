@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import AOS from "aos"
 import "aos/dist/aos.css"
 
-function FrontPage({name, setName}) {
+function FrontPage({name, setName, setIsLogout}) {
     const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(false)
 
@@ -27,6 +27,7 @@ function FrontPage({name, setName}) {
         setIsLoading(true)
         const loader = setTimeout(() => {
             setIsLoading(false)
+            setIsLogout(false)
             navigate('/tenzies')
         }, 2500)
 
@@ -38,9 +39,9 @@ function FrontPage({name, setName}) {
                 <div className="title" >
                     <div className="flex absolute top-[1rem] gap-[0.6rem] lg:static">
                         <AiFillThunderbolt className='text-teal-600 text-[2rem] inline'/>
-                        <span className='text-gray-300 tracking-widest lg:text-[1.3rem]'>RobinDev</span>
+                        <span className='text-gray-300 tracking-widest text-[1.1rem] lg:text-[1.3rem]'>RobinDev</span>
                     </div>
-                    <h1 className="text-teal-600 text-[2.5rem] lg:text-[3rem] font-bold text-center lg:text-left mt-[2.5rem] lg:mt-[0rem] p-shadow">TENZIES-REACT</h1>
+                    <h1 className="text-teal-600 text-[2.5rem] lg:text-[3rem] font-bold text-center lg:text-left mt-[2.9rem] lg:mt-[0rem] p-shadow">TENZIES-REACT</h1>
                     <p className='text-center lg:text-left p-shadow'>Roll until all the dice are the same. Click each die to freeze it ats its current value between rolls</p>
                 </div>
 

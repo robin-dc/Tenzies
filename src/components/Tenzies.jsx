@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { AiFillThunderbolt } from 'react-icons/ai';
+import { Link } from "react-router-dom"
 import { FaTrophy } from 'react-icons/fa';
 import AOS from "aos"
 import "aos/dist/aos.css"
 
-function Tenzies({name, dices, setRollAgain, Held, checkWin, isWin, rollCount, setRollCount, seconds, setSeconds}) {
+function Tenzies({name, dices, setRollAgain, Held, checkWin, isWin, setIsLogout, rollCount, setRollCount, seconds, setSeconds}) {
     const [isActive, setIsActive] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isHighScore, setIsHighScore] = useState(false);
@@ -48,7 +49,7 @@ function Tenzies({name, dices, setRollAgain, Held, checkWin, isWin, rollCount, s
         if(isWin){
             if(!highscore){
                 localStorage.setItem('Tenzies', JSON.stringify({
-                    name: name && name[0].toUpperCase() + name.slice(1),
+                    name: lastPlayer ? lastPlayer : name && name[0].toUpperCase() + name.slice(1),
                     rollCount: rollCount,
                     seconds: seconds,
                     accuracy: accuracy
@@ -56,11 +57,12 @@ function Tenzies({name, dices, setRollAgain, Held, checkWin, isWin, rollCount, s
             }
             else if(highscore && highscore.accuracy < accuracy) {
                 localStorage.setItem('Tenzies', JSON.stringify({
-                    name: name && name[0].toUpperCase() + name.slice(1),
+                    name: lastPlayer ? lastPlayer : name && name[0].toUpperCase() + name.slice(1),
                     rollCount: rollCount,
                     seconds: seconds,
                     accuracy: accuracy
                 }))
+
                 setIsHighScore(true)
                 setTimeout(() => {
                     setIsHighScore(false)
@@ -72,16 +74,17 @@ function Tenzies({name, dices, setRollAgain, Held, checkWin, isWin, rollCount, s
 
                 if(playerRate < storedRate){
                     localStorage.setItem('Tenzies', JSON.stringify({
-                        name: name && name[0].toUpperCase() + name.slice(1),
+                        name: lastPlayer ? lastPlayer : name && name[0].toUpperCase() + name.slice(1),
                         rollCount: rollCount,
                         seconds: seconds,
                         accuracy: accuracy
                     }))
+
+                    setIsHighScore(true)
+                    setTimeout(() => {
+                        setIsHighScore(false)
+                    }, 3000)
                 }
-                setIsHighScore(true)
-                setTimeout(() => {
-                    setIsHighScore(false)
-                }, 3000)
              }
         }
     }, [isWin])
@@ -102,7 +105,7 @@ function Tenzies({name, dices, setRollAgain, Held, checkWin, isWin, rollCount, s
             <nav className='py-[1.4rem] flex justify-between relative'>
                 <div className='flex gap-[0.5rem] items-center'>
                     <AiFillThunderbolt className='text-teal-600 text-[2rem] inline'/>
-                    <h3 className="text-gray-300 tracking-widest lg:text-[1.3rem]">Player {lastPlayer ? lastPlayer : name[0].toUpperCase() + name.slice(1)}</h3>
+                    <Link to="/" className="text-gray-300 tracking-widest lg:text-[1.3rem]" onClick={() => setIsLogout(true)}>Player {lastPlayer ? lastPlayer : name && name[0].toUpperCase() + name.slice(1)}</Link>
                 </div>
                 <div className='flex gap-[0.5rem] items-center'>
                     <h3 className="text-gray-300 tracking-widest lg:text-[1.3rem]">Rolls: {rollCount}</h3>
@@ -152,8 +155,8 @@ function Tenzies({name, dices, setRollAgain, Held, checkWin, isWin, rollCount, s
                 }}>{isWin ? `Won with ${accuracy}% accuracy! Play Again?` : "Roll the Dice"}</button>
             </div>
             <h3 className="text-gray-300 tracking-widest lg:text-[1.3rem] absolute -bottom-[6rem] pb-[1rem] right-[50%] translate-x-[50%] lg:bottom-1 lg:right-[6rem] lg:pb-0">Time: {seconds}s</h3>
-            <div className={`absolute ${isHighScore ? "top-[50%]":"top-[-500%]"} left-[50%] translate-x-[-50%] translate-y-[-50%] h-screen flex justify-center items-center bg-[#00000081] w-screen transition duration-300`}>
-                <h1 className='text-yellow-600 text-center text-shadow font-bold text-[3rem] leading-[3rem]'>YOU BEAT THE HIGHSCORE</h1>
+            <div className={`fixed ${isHighScore ? "top-0":"top-[-500%]"} left-0 right-0 bottom-0 h-screen flex justify-center items-center bg-[#00000081] w-screen transition duration-300`}>
+                <h1 className='text-yellow-600 text-center text-shadow font-bold text-[3rem] leading-[3rem] pb-[3rem]'>YOU BEAT THE HIGHSCORE</h1>
             </div>
         </div>
 
