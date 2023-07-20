@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import FrontPage from "./components/FrontPage"
+import Error from "./components/Error"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Tenzies from "./components/Tenzies"
 import dices from "./data/dice"
@@ -91,6 +92,7 @@ function App() {
             seconds={seconds}
             setSeconds={setSeconds}
             />}/>
+            <Route path="*" element={<Error/>}/>
         </Routes>
       </BrowserRouter>
     </>

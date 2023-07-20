@@ -31,10 +31,10 @@ function FrontPage({name, setName}) {
                 <div className="title" >
                     <div className="flex absolute top-[1rem] gap-[0.6rem] lg:static">
                         <AiFillThunderbolt className='text-teal-600 text-[2rem] inline'/>
-                        <span className='text-gray-300 tracking-widest text-[1.3rem]'>RobinDev</span>
+                        <span className='text-gray-300 tracking-widest lg:text-[1.3rem]'>RobinDev</span>
                     </div>
-                    <h1 className="text-teal-600 text-[2.5rem] lg:text-[3rem] font-bold text-center lg:text-left mt-[2.3rem]lg:mt-[0rem]">TENZIES-REACT</h1>
-                    <p className='text-center lg:text-left'>Roll until all the dice are the same. Click each die to freeze it ats its current value between rolls</p>
+                    <h1 className="text-teal-600 text-[2.5rem] lg:text-[3rem] font-bold text-center lg:text-left mt-[2.5rem] lg:mt-[0rem] p-shadow">TENZIES-REACT</h1>
+                    <p className='text-center lg:text-left p-shadow'>Roll until all the dice are the same. Click each die to freeze it ats its current value between rolls</p>
                 </div>
 
                 <form className="flex flex-col lg:flex-row gap-[0.5rem]" onSubmit={handleSubmit} >
