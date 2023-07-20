@@ -125,7 +125,7 @@ function Tenzies({name, dices, setRollAgain, Held, checkWin, isWin, rollCount, s
                         <div>
                             <p className='text-gray-950 font-medium'>Player: {highscore.name}</p>
                             <p className='text-gray-950 font-medium'>Rolls: {highscore.rollCount}</p>
-                            <p className='text-gray-950 font-medium'>Time: {highscore.seconds}</p>
+                            <p className='text-gray-950 font-medium'>Time: {highscore.seconds}s</p>
                             <p className='text-gray-950 font-medium'>Accuracy: {highscore.accuracy}%</p>
                         </div>
                         :
