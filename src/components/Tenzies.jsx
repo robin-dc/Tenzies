@@ -118,7 +118,7 @@ function Tenzies({name, dices, setRollAgain, Held, checkWin, isWin, setIsLogout,
                     />
                 </div>
                 {isOpen && <div className="absolute bg-white shadow-2xl p-[1.5rem] rounded-[10px] right-[0rem] top-[4rem] z-[100]">
-                    <h4 className='font-semibold text-teal-600 mb-2'>Leaderboards</h4>
+                    <h4 className='font-semibold text-teal-600 mb-2'>Leaderboard</h4>
                     {highscore ?
                         <div>
                             <p className='text-gray-950 font-medium'>Player: {highscore.name}</p>
