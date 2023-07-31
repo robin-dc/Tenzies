@@ -1,13 +1,13 @@
-# Tenzies
+# Tenzies Game : Overview
 Welcome to Tenzies, an exciting dice game that will test your luck and strategy! Roll the dice as fast as you can and try to match all the numbers. The lesser rolls you make in a given time, the higher your score.
 
 <br>
 
-<img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>   <img src="https://img.shields.io/badge/-tailwind-0375A1?.svg?&style=for-the-badge&logo=tailwind css&logoColor=0f172a"/> 
+<img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>   <img src="https://img.shields.io/badge/-tailwind-0375A1?.svg?&style=for-the-badge&logo=tailwind css&logoColor=0f172a"/>
 
 <br>
 
-## 🎲 How to Play Tenzies Game:
+## 🎲 How to Play:
 
 <br>
 
@@ -15,7 +15,7 @@ Welcome to Tenzies, an exciting dice game that will test your luck and strategy!
 
 <br>
 
-<img src='https://github.com/robin-dc/Quizzical/blob/main/public/quizzical_preview.png'>
+<img src='https://github.com/robin-dc/Tenzies/blob/main/public/tenzies_preview1.png'>
 
 <br>
 
@@ -23,7 +23,7 @@ Welcome to Tenzies, an exciting dice game that will test your luck and strategy!
 
 <br>
 
-<img src='https://github.com/robin-dc/Quizzical/blob/main/public/quizzical_preview.png'>
+<img src='https://github.com/robin-dc/Tenzies/blob/main/public/tenzies_preview2.png'>
 
 <br>
 
@@ -31,7 +31,7 @@ Welcome to Tenzies, an exciting dice game that will test your luck and strategy!
 
 <br>
 
-<img src='https://github.com/robin-dc/Quizzical/blob/main/public/quizzical_preview.png'>
+<img src='https://github.com/robin-dc/Tenzies/blob/main/public/tenzies_preview3.png'>
 
 <br>
 
@@ -39,15 +39,15 @@ Welcome to Tenzies, an exciting dice game that will test your luck and strategy!
 
 <br>
 
-<img src='https://github.com/robin-dc/Quizzical/blob/main/public/quizzical_preview.png'>
+<img src='https://github.com/robin-dc/Tenzies/blob/main/public/tenzies_preview4.png'>
 
 <br>
 
-5. Once you complete the game, your performance will be graded based on the number of rolls it took you and the time it took to complete. 
+5. Once you complete the game, your performance will be graded based on the number of rolls it took you and the time it took to complete.
 
 <br>
 
-<img src='https://github.com/robin-dc/Quizzical/blob/main/public/quizzical_preview.png'>
+<img src='https://github.com/robin-dc/Tenzies/blob/main/public/tenzies_preview5.png'>
 
 <br>
 
@@ -55,7 +55,7 @@ Welcome to Tenzies, an exciting dice game that will test your luck and strategy!
 
 <br>
 
-<img src='https://github.com/robin-dc/Quizzical/blob/main/public/quizzical_preview.png'>
+<img src='https://github.com/robin-dc/Tenzies/blob/main/public/tenzies_preview6.png'>
 
 <br>
 
